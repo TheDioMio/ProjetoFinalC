@@ -6,7 +6,6 @@
 #define NUM_MAX_EXERCICIOS 100
 #define NUM_MAX_SUBMISSOES 1000
 
-<<<<<<< HEAD
 
 typedef struct {                                                     //STRUCT COMPLETA
     int id_estudante; 
@@ -32,8 +31,6 @@ typedef struct {
     int ano;
 } Data;
 
-=======
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
 /*FUNÇÕES*/
 int lerNumero(int, int);
 int menuInicial();
@@ -41,55 +38,22 @@ int menuEstudante();
 int menuDocente();
 int menuDocente_gerirEstudantes();
 int menuDocente_gerirFichas();
-<<<<<<< HEAD
 int menuDocente_regEstudantes(Estudante estudantes[], int contadorEstudantes);
 int menuDocente_consEstudantes(Estudante estudantes[], int contadorEstudantes);
 int menuDocente_regFichas();
 int menuDocente_consFichas();
 /*FUNÇÕES - FIM*/
 
-=======
-int menuDocente_regEstudantes(int *contadorEstudantes);
-int menuDocente_consEstudantes(int *contadorEstudantes);
-int menuDocente_regFichas(int *contadorFichas);
-int menuDocente_consFichas(int *contadorFichas);
-/*FUNÇÕES - FIM*/
-
-/*VETORES/ESTRUTURAS*/
-struct Estudantes{                                                     //STRUCT COMPLETA
-    int id_estudante[NUM_MAX_ESTUDANTES]; 
-    int numero_de_estudante[NUM_MAX_ESTUDANTES];
-    char nome_estudante[NUM_MAX_ESTUDANTES] [80];
-    char email_estudante[NUM_MAX_ESTUDANTES] [80];         //STRING, POR ISSO PODE GUARDAR NÚMEROS TAMBÉM!
-};
-
-struct Fichas{                                           //STRUCT COMPLETA
-    int numero_de_exercicos[NUM_MAX_EXERCICIOS];                                                                       
-    char id_ficha[NUM_MAX_FICHAS]; 
-    char nome_ficha[NUM_MAX_FICHAS] [20]; 
-    char data_publicacao [NUM_MAX_FICHAS] [8]; 
-};
-
-typedef struct{
-    int id_exercicio[NUM_MAX_EXERCICIOS];
-    char nome_exercicio[NUM_MAX_EXERCICIOS] [30];
-} Exercicios;
-/*VETORES/ESTRUTURAS - FIM*/
-
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
 
 /*FICHEIROS*/
 FILE *dados_estudantes, *dados_docentes;
 /*FICHEIROS - FIM*/
 
 int main() {
-<<<<<<< HEAD
     Estudante estudantes[NUM_MAX_ESTUDANTES];
     Ficha fichas[NUM_MAX_FICHAS];
     Exercicio exercicios[NUM_MAX_EXERCICIOS];
 
-=======
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
     int opcaoA, opcaoB, opcaoC, opcaoD;
     int contadorEstudantes, contadorFichas, contadorExercicios;
 
@@ -119,7 +83,6 @@ int main() {
                                 switch(opcaoC) {
                                     case 1:
                                         system("cls");
-<<<<<<< HEAD
                                         contadorEstudantes = menuDocente_regEstudantes(estudantes,contadorEstudantes);
                                         getchar();
                                         getchar();
@@ -141,29 +104,6 @@ int main() {
             break;
             default:
             break;
-=======
-                                        menuDocente_regEstudantes(&contadorEstudantes);
-                                        getchar();
-                                        getchar();
-                                        break;
-                                    case 2:
-                                        system("cls");
-                                        menuDocente_consEstudantes(&contadorEstudantes);
-                                        getchar();
-                                        getchar();
-                                        break;
-                                }
-                                break;
-                        case 2:
-                            system("cls"); 
-                            opcaoC = menuDocente_gerirFichas();
-                            break;
-                    } 
-                } while (opcaoB != 0);                   
-                break;
-            default:
-                break;
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
         }
     } while(opcaoA != 0);                               //SAIR DA APLICAÇÃO (WHILE)
 }
@@ -256,7 +196,6 @@ int menuDocente_gerirFichas() {
 
 
 
-<<<<<<< HEAD
 int menuDocente_regEstudantes(Estudante estudantes[NUM_MAX_ESTUDANTES], int contadorEstudantes) {
     int indice;
     char opcao;
@@ -278,60 +217,27 @@ int menuDocente_regEstudantes(Estudante estudantes[NUM_MAX_ESTUDANTES], int cont
         printf("\n");
         scanf(" %c", &opcao);
     } while (opcao != 'n' && opcao != 'N');
-=======
-int menuDocente_regEstudantes(int *contadorEstudantes) {
-    struct Estudantes estruturaEstudantes;
-    int indice;
-    char opcao:
-    do {
-        printf("######### REGISTAR ESTUDANTES #########");
-        printf("\nInsira o ID do estudante: ");
-        scanf("%d", &estruturaEstudantes.id_estudante[*contadorEstudantes]);
-        printf("\nInsira número de estudante: ");
-        scanf("%d", &estruturaEstudantes.numero_de_estudante[*contadorEstudantes]);
-        printf("\nInsira o nome do estudante: ");
-        scanf("%s", &estruturaEstudantes.nome_estudante[*contadorEstudantes]);
-        printf("\nInsira o email do estudante: ");
-        scanf("%s", &estruturaEstudantes.email_estudante[*contadorEstudantes]);
-
-        printf("\nRegistar mais?");
-        printf("\n(S)im\n(N)ao");
-        scanf(" %c", &opcao);
-
-        contadorEstudantes++;
-    } while (opcao != 's' && opcao != 'S');
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
 
     return (contadorEstudantes);
 }
 
 
 
-<<<<<<< HEAD
 int menuDocente_consEstudantes(Estudante estudantes[NUM_MAX_ESTUDANTES], int contadorEstudantes) {
-=======
-int menuDocente_consEstudantes(int *contadorEstudantes) {
-    struct Estudantes estruturaEstudantes;
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
     int indice;
 
     printf("######### CONSULTAR ESTUDANTES #########");
     for (indice = 0; indice < contadorEstudantes; indice++) {
-<<<<<<< HEAD
         printf("\n%d", estudantes[indice].id_estudante);
         printf("\n%d", estudantes[indice].numero_de_estudante);
         printf("\n%s", estudantes[indice].nome_estudante);
         printf("\n%s", estudantes[indice].email_estudante);
         printf("\n");
-=======
-        printf("[%d; %d, %s, %s]", estruturaEstudantes.id_estudante[indice], estruturaEstudantes.numero_de_estudante[indice], estruturaEstudantes.nome_estudante[indice], estruturaEstudantes.email_estudante[indice]);
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
     }
 }
 
 
 
-<<<<<<< HEAD
 // int menuDocente_regFichas(int *contadorFichas) {
 //     int indice;
 //     char opcao;
@@ -359,39 +265,4 @@ int menuDocente_consEstudantes(int *contadorEstudantes) {
 
 
 // int menuDocente_consFichas(int *contadorFichas) {
-
 // }
-=======
-int menuDocente_regFichas(int *contadorFichas) {
-    struct Fichas estruturaFichas;
-    int indice;
-    char opcao:
-    do {
-        printf("######### REGISTAR FICHAS #########");
-        printf("\nInsira o ID do estudante: ");
-        scanf("%d", &estruturaFichas.id_estudante[*contadorFichas]);
-        printf("\nInsira número de estudante: ");
-        scanf("%d", &estruturaFichas.numero_de_estudante[*contadorFichas]);
-        printf("\nInsira o nome do estudante: ");
-        scanf("%s", &estruturaFichas.nome_estudante[*contadorFichas]);
-        printf("\nInsira o email do estudante: ");
-        scanf("%s", &estruturaFichas.email_estudante[*contadorFichas]);
-
-        printf("\nRegistar mais?");
-        printf("\n(S)im\n(N)ao");
-        scanf(" %c", &opcao);
-
-        contadorEstudantes++;
-    } while (opcao != 's' && opcao != 'S');
-
-    return (contadorEstudantes);
-}
-
-
-
-int menuDocente_consFichas(int *contadorFichas) {
-
-}
-
-
->>>>>>> 545dc4c27adff8c710eabb08985e86451ac30bec
